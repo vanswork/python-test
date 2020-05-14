@@ -1,4 +1,5 @@
-# Create a SQLite3 database and table
+### Create a SQLite3 database and table ###
+
 # import the sqlite3 library
 import sqlite3
 
@@ -9,9 +10,9 @@ conn = sqlite3.connect("new.db")
 cursor = conn.cursor()
 
 # create a table
-cursor.execute("""CREATE TABLE population
-	(city TEXT, state TEXT, population INT)
-	""")
+cursor.execute("""CREATE TABLE population (city TEXT, state TEXT, population INT)""")
+
 
 # close the database connection
 conn.close()
+
