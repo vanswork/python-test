@@ -172,8 +172,10 @@ def wizard(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = '\n\nPlay this track:'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
-        text_pt3 = '[audio clip]'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
+
+        audio_pt1 = 'assets/LegendsMusic.mp3'
+        context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_pt1, 'rb'), supports_streaming=True,timeout=10000)
+
         text_pt4 = '\n\nWalk this route:'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt4)
 
