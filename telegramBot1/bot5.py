@@ -168,7 +168,7 @@ def wizard(update, context):
                     '\n\n\'/guide 9\''
         text_send = text_next
     elif text_msg == '9':
-        text_pt1 = 'Wear your headphones, play the below curated track, and stroll around the neighborhood.'
+        text_pt1 = 'The end of the tour is near. For your last activity, I want you to enjoy New York by taking a stroll through the neighborhood while listening to the track below.'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = '\n\nPlay this track:'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
