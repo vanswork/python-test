@@ -176,14 +176,15 @@ def wizard(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
         text_pt4 = '\n\nWalk this route:'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt4)
-        text_pt5 = 'https://bit.ly/2DPXvOL'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt5)
+
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/walk-map.png'
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
 
         text_next = '\n\nWhen complete, type:' \
                     '\n\n\'/guide eject mixtape'
         text_send = text_next
     elif text_msg == 'eject mixtape':
-        text_pt1 = 'Thank you for participating in Mixtape Legends Experience, Volume 3. Have a good night.'
+        text_pt1 = 'Thank you for participating in Mixtape Legends Experience, Volume 3. I hope you enjoyed smoking, eating, and chilling in NYC. This project was created as a love letter to NYC and a farewell to Nathan. Have a good night.'
         text_send = text_pt1
     else:
         text_send = "Huh? What?"
