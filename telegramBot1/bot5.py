@@ -107,7 +107,7 @@ def wizard(update, context):
         text_send = text_pt1
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
 
-        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/five-points-map.jpg'
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/five-points-map2.jpg'
         context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
 
         text_next = '\n\nTo learn what you should do here, type: ' \
