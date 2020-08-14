@@ -3,5 +3,9 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/flasktaskr5" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py2manager" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py2manager/gluon/packages/dal" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/py2manager/gluon/packages/yatl" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/telegramBot1/python-telegram-bot" vcs="Git" />
   </component>
 </project>
