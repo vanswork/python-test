@@ -106,8 +106,10 @@ def wizard(update, context):
         text_pt1 = 'Check out this map to understand where you are standing in the original Five Points.'
         text_send = text_pt1
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
-        text_pt3 = '\n\nhttps://www.flickr.com/photos/amapple/5630172156/'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
+
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/five-points-map.jpg'
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
+
         text_next = '\n\nTo learn what you should do here, type: ' \
                     '\n\n\'/guide 4e\''
         text_send = text_next
@@ -118,7 +120,7 @@ def wizard(update, context):
                     '\n\n\'/guide 5\''
         text_send = text_pt1 + text_pt2 + text_next
     elif text_msg == '5':
-        text_pt1 = 'Head over Nom Wah (Dim Sum) to eat their delicious pork steam buns.'
+        text_pt1 = 'Head over Nom Wah to eat their delicious pork steam buns.'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = '13 Doyers St, ny, ny'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
@@ -126,7 +128,7 @@ def wizard(update, context):
                     '\n\n\'/guide 6\''
         text_send = text_next
     elif text_msg == '6':
-        text_pt1 = 'On bike, travel to the final neighborhood, West Village. Dock your bikes before starting the next activity '
+        text_pt1 = 'On bike, travel to the final neighborhood, West Village. Dock your bikes before starting the next activity. '
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = '10 St Lukes Pl, New York, NY'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
