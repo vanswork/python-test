@@ -39,16 +39,16 @@ def wizard(update, context):
                     '\n\n\'/guide 1\''
         text_send = text_next
     elif text_msg == '1':
-        text_pt2 = 'Remember this song?'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
-        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/Legends2020.jpg'
-        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
+        text_pt1 = 'Remember this song? One moment, downloading...'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
+        text_pt2 = 'assets/BIGGIE-JUICY3.mp4'
+        context.bot.send_video(chat_id=update.effective_chat.id, video=open(text_pt2, 'rb'), supports_streaming=True, timeout=10000)
         text_next = '\n\nTo continue, type: ' \
                     '\n\n\'/guide 1a\''
         text_send = text_next
     elif text_msg == '1a':
         text_pt1 = 'The Notorious B.I.G. had far reaching aspirations that were never realized because his life was cut short. '
-        text_pt2 = 'Hangout, and chill with friends, on the stoop from Biggie\'s youth. Celebrate him by smoking a Birthday Cake joint.'
+        text_pt2 = '\n\nHangout, and chill with friends, on the stoop from Biggie\'s youth. Celebrate him by smoking a Birthday Cake joint.'
         text_pt3 = '\n\nThe strain is an uplifting indica-dominant hybrid strain known for it\'s relaxing' \
                    ' and euphoric effects.'
         text_next = '\n\nWhen finished, and ready for the next activity, type: ' \
@@ -72,6 +72,9 @@ def wizard(update, context):
         text_send = text_pt1 + text_next
     elif text_msg == '4a':
         text_pt1 = 'Welcome to modern day NYC chinatown. You are currently standing on the last remaining street of America\'s (maybe the world\'s) first melting pot.'
+
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/Legends2020.jpg'
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
 
         text_pt2 = '\n\n1822: Emancipation ended, African Americans and Irish moved here.'
         text_pt3 = '\n1846: Battle of Five Points (Dead Rabbits vs Natives).'
