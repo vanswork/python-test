@@ -97,9 +97,9 @@ def wizard(update, context):
         text_pt2 = 'Watch a clip from Gangs of New York to get glimpse of what it was like:'
         text_send = text_pt1 + text_pt2
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
-        text_pt3 = '\n\nhttps://www.youtube.com/watch?v=aAWIZFqE6L4'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
-        text_next = '\n\nTo learn what you should do here, type: ' \
+        video_pt1 = 'assets/five-points.mp4'
+        context.bot.send_video(chat_id=update.effective_chat.id, video=open(video_pt1, 'rb'), supports_streaming=True, timeout=10000)
+        text_next = '\n\nTo learn more, type: ' \
                     '\n\n\'/guide 4d\''
         text_send = text_next
     elif text_msg == '4d':
@@ -145,9 +145,8 @@ def wizard(update, context):
         text_send = text_pt1 + text_pt2
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
 
-        text_pt4 = 'https://www.youtube.com/watch?v=_busSo7N45E'
-        text_send = text_pt4
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
+        video_pt1 = 'assets/dave.mp4'
+        context.bot.send_video(chat_id=update.effective_chat.id, video=open(video_pt1, 'rb'), supports_streaming=True, timeout=10000)
 
         text_next = '\n\nTo learn what you should do here, type: ' \
                     '\n\n\'/guide 7b\''
