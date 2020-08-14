@@ -71,9 +71,9 @@ def wizard(update, context):
                     '\n\n\'/guide 4a\''
         text_send = text_pt1 + text_next
     elif text_msg == '4a':
-        text_pt1 = 'Welcome to modern day NYC chinatown. You are currently standing on the last remaining street of America\'s (maybe the world\'s) first melting pot.'
+        text_pt1 = 'Welcome to modern day NYC chinatown. You are currently standing on the last remaining streets of America\'s (maybe the world\'s) first melting pot.'
 
-        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/Legends2020.jpg'
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/five-points.jpg'
         context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
 
         text_pt2 = '\n\n1822: Emancipation ended, African Americans and Irish moved here.'
@@ -84,7 +84,7 @@ def wizard(update, context):
         text_pt7 = '\n1980: NYC Chinatown holds the largest Chinese community in America.'
         text_next = '\n\nTo learn more, type: ' \
                     '\n\n\'/guide 4b\''
-        text_send = text_pt1 + text_pt2 + text_pt3 + text_pt4 + text_pt5 + text_next
+        text_send = text_pt1 + text_pt2 + text_pt3 + text_pt4 + text_pt5 + text_pt6 + text_pt7 + text_next
     elif text_msg == '4b':
         text_pt1 = 'Mosco street is one of the last remaining roads that lead to Five Points (Remember the movie Gangs of New York?)'
         text_pt2 = '\n\nRead what Charles Dickens wrote about Five points:'
