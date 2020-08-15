@@ -9,6 +9,9 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 
 def start(update, context):
+    photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/wizard-12.jpg'
+    context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
+
     text_intro1 = 'Welcome to Mixtape Legends Experience, Volume 3'
     text_intro2 = 'Today\'s mixtape is a tour of NYC and my job is to be your tour bot guide.'
     text_intro3 = '\n\nDo you want to know more about the tour? Type:' \
