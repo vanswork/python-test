@@ -1,6 +1,6 @@
 import time
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
-updater = Updater(token='1389188838:AAH8qW2LXnc6mlnzeo3x3G_q1E4jwuGam5k', use_context=True)
+updater = Updater(token='1318955569:AAGZoK3VxDz1nNWNYvv7_avjcM4b06Kp5Zw', use_context=True)
 
 dispatcher = updater.dispatcher
 
@@ -27,8 +27,8 @@ def wizard(update, context):
     text_initial = ' '.join(context.args).lower()
     text_msg = text_initial
     if text_msg == 'tell me more':
-        text_pt1 = 'The pandemic sucks, and there isn\'t many ways to socially connect at the moment. A temporary emotional cure is hanging out with friends and going on an adventure, via a tour of NYC. '
-        text_pt2 = '\n\nThe tour carries you across 3 NYC neighborhoods, where you will smoke, eat, and chill. '
+        text_pt1 = 'The pandemic sucks, and there aren\'t many ways to socially connect at the moment. A temporary emotional cure is hanging out with friends and going on an adventure, via a tour of NYC. '
+        text_pt2 = '\n\nThe tour carries you and friends across 3 NYC neighborhoods, where you will smoke, eat, and chill. '
         text_pt3 = '\n\nI can guide you by giving you step by step instructions. '
         text_send = text_pt1 + text_pt2 + text_pt3
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
