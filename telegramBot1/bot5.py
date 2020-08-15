@@ -9,8 +9,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 
 
 def start(update, context):
-    text_intro1 = 'Hi, welcome to Mixtape Legends Experience, Volume 3'
-    text_intro2 = 'Today\'s mixtape is a tour of NYC and I\'m tasked to be your guide.'
+    text_intro1 = 'Welcome to Mixtape Legends Experience, Volume 3'
+    text_intro2 = 'Today\'s mixtape is a tour of NYC and my job is to be your tour bot guide.'
     text_intro3 = '\n\nDo you want to know more about the tour? Type:' \
                   '\n\n\'/guide tell me more\''
 
@@ -23,23 +23,47 @@ def wizard(update, context):
     text_initial = ' '.join(context.args).lower()
     text_msg = text_initial
     if text_msg == 'tell me more':
-        text_pt1 = 'The tour is an adventure across 3 NYC neighborhoods. You will smoke, eat, chill while learning and experiencing '  \
-                   'the places you visit. I can guide you by giving you step by step instructions.'
-        text_next = '\n\nWould you like to go on this adventure? To continue, type:' \
-                    '\n\n\'/guide play mixtape legends volume 3\''
+        text_pt1 = 'The pandemic sucks, and there isn\'t many ways to socially connect at the moment. A temporary emotional cure is hanging out with friends and going on an adventure, via a tour of NYC. '
+        text_pt2 = '\n\nThe tour carries you across 3 NYC neighborhoods, where you will smoke, eat, and chill. '
+        text_pt3 = '\n\nI can guide you by giving you step by step instructions. '
+        text_send = text_pt1 + text_pt2 + text_pt3
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
+
+        text_next = 'Would you like to know which supplies are required to complete the tour? To learn more, type:' \
+                    '\n\n\'/guide supplies\''
         text_send = text_pt1 + text_next
+    elif text_msg == 'supplies':
+        text_pt1 = 'You will need the following for each participant:'
+        text_pt2 = '\n\n1x Joint with Sativa (Birthday Cake)'
+        text_pt3 = '\n1x Joint with Sativa/Indica mix (Survival)'
+        text_pt4 = '\n1x Joint with Indica (Forbidden Fruit)'
+        text_pt5 = '\nA lighter for the joints'
+        text_pt6 = '\nPrinted map for one of the tour activities'
+        text_pt7 = '\nWalking Shoes'
+        text_pt8 = '\nA Basketball (to be shared among everyone)'
+        text_pt9 = '\nAccess to a bike, like Citibike'
+        text_pt10 = '\nHeadphones'
+        text_pt11 = '\nMoney for food'
+        text_pt12 = '\nDrinking water'
+        text_send = text_pt1 + text_pt2 + text_pt3 + text_pt4 + text_pt5 + text_pt6 + text_pt7 + text_pt8 + text_pt9 + text_pt10 + text_pt11 + text_pt12
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
+
+        text_next = '\n\nWhen you are ready to begin the tour, type:' \
+                    '\n\n\'/guide play mixtape legends volume 3\''
+        text_send = text_next
     elif text_msg == 'play mixtape legends volume 3':
-        text_pt1 = '... inserting tape'
+        text_pt1 = 'Inserting tape...'
+        time.sleep(2)
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/Legends2020.jpg'
         context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
-        text_pt3 = 'The adventure begins in Brooklyn...'
+        text_pt3 = 'The tour begins in Brooklyn...'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
         text_next = '\n\n To receive instructions for the first activity, type: ' \
                     '\n\n\'/guide 1\''
         text_send = text_next
     elif text_msg == '1':
-        text_pt1 = 'Remember this song? One moment, downloading...'
+        text_pt1 = 'Remember this song? One moment, digging through my archives...'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = 'assets/BIGGIE-JUICY3.mp4'
         context.bot.send_video(chat_id=update.effective_chat.id, video=open(text_pt2, 'rb'), supports_streaming=True, timeout=10000)
@@ -48,12 +72,22 @@ def wizard(update, context):
         text_send = text_next
     elif text_msg == '1a':
         text_pt1 = 'The Notorious B.I.G. had far reaching aspirations that were never realized because his life was cut short. '
-        text_pt2 = '\n\nHangout, and chill with friends, on the stoop from Biggie\'s youth. Celebrate him by smoking a Birthday Cake joint.'
-        text_pt3 = '\n\nThe strain is an uplifting indica-dominant hybrid strain known for it\'s relaxing' \
+        text_pt2 = '\n\nI want you to celebrate his life by smoking a Birthday Cake joint on his childhood stoop. '
+        text_send = text_pt1 + text_pt2
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
+
+        text_pt3 = 'Address:'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
+        text_pt4 = '226 Saint James Place, Brooklyn, NY'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt4)
+
+        text_pt5 = '\n\nThe strain is an uplifting strain known for it\'s relaxing' \
                    ' and euphoric effects.'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt5)
+
         text_next = '\n\nWhen finished, and ready for the next activity, type: ' \
                     '\n\n\'/guide 2\''
-        text_send = text_pt1 + text_pt2 + text_pt3 + text_next
+        text_send = text_next
     elif text_msg == '2':
         text_pt1 = 'It\'s time to eat. Biggie had unrealized aspirations to open a soul food restaurant. Visit Napoleon Southern Cuisine and try their wings.'
         text_next = '\n\nWhen finished, and ready for the next activity, type: ' \
@@ -71,7 +105,7 @@ def wizard(update, context):
                     '\n\n\'/guide 4a\''
         text_send = text_pt1 + text_next
     elif text_msg == '4a':
-        text_pt1 = 'Welcome to modern day NYC chinatown. You are currently standing on the last remaining streets of America\'s (maybe the world\'s) first melting pot.'
+        text_pt1 = 'Welcome to modern day NYC chinatown. You are currently standing on the last remaining streets of America\'s first melting pot.'
 
         photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/five-points.jpg'
         context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
@@ -132,7 +166,7 @@ def wizard(update, context):
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
         text_pt2 = '10 St Lukes Pl, New York, NY'
         context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
-        text_next = '\n\nWhen you arrive, type:' \
+        text_next = '\n\nWhen you arrive and are ready to start the next activity, type:' \
                     '\n\n\'/guide 7\''
         text_send = text_next
     elif text_msg == '7':
@@ -168,10 +202,13 @@ def wizard(update, context):
                     '\n\n\'/guide 9\''
         text_send = text_next
     elif text_msg == '9':
-        text_pt1 = 'The end of the tour is near. For your last activity, I want you to enjoy New York by taking a stroll through the neighborhood while listening to the track below.'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt1)
-        text_pt2 = '\n\nPlay this track:'
-        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt2)
+        text_pt1 = 'The end of the tour is near. I want to thank you for going on today\'s adventure. The project was created during the pandemic, when it felt as though all the fun had drained out of NYC and would never be replenished. This project is a love letter to NYC for friends and family to have fun one more time in the city of New York.'
+        text_pt2 = '\n\nFor your last activity, I want you to enjoy the city by taking a leisurely stroll through the neighborhood, to soak up the sights and feelings, while listening to the track below.'
+        text_send = text_pt1 + text_pt2
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_send)
+
+        text_pt3 = '\n\nPlay this track:'
+        context.bot.send_message(chat_id=update.effective_chat.id, text=text_pt3)
 
         audio_pt1 = 'assets/LegendsMusic.mp3'
         context.bot.send_audio(chat_id=update.effective_chat.id, audio=open(audio_pt1, 'rb'), supports_streaming=True,timeout=10000)
@@ -186,7 +223,11 @@ def wizard(update, context):
                     '\n\n\'/guide eject mixtape'
         text_send = text_next
     elif text_msg == 'eject mixtape':
-        text_pt1 = 'Thank you for participating in Mixtape Legends Experience, Volume 3. I hope you enjoyed smoking, eating, and chilling in NYC. This project was created as a love letter to NYC and a farewell to Nathan. Have a good night.'
+        photo_pt1 = 'https://raw.githubusercontent.com/vanswork/python-test/master/telegramBot1/assets/Legends2020.jpg'
+        context.bot.send_photo(chat_id=update.effective_chat.id, photo=photo_pt1)
+
+        text_pt1 = 'Thank you for participating in Mixtape Legends Experience, Volume 3. I hope you enjoyed smoking, eating, and chilling in NYC. ' \
+                   '\n\nFarewell, Nathan. I hope you remember this day.'
         text_send = text_pt1
     else:
         text_send = "Huh? What?"
